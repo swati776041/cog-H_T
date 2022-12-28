@@ -4,43 +4,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
     <style>   
-        #details{
-            background-color: purple;
+        #emailerror,#nameerror,#mobileerror,#iderror,#stateerror,#numerror,#autherror{
+           color: purple;
         }
-        #welcome{
+       input[type=text]:focus{
             background-color:green ;
-            text-align: center;
+            
         }
         </style> 
 </head>
-<body style="background-color: green;">
+<body style="background-color:pink;">
     
     <h2>Registration</h2>
     
-    <h3>Personal details</h>
-        <form action="#"method= "get" name="form1"
+    <h3>Personal details</h3>
+        <form action="#"method= "get" name="form1">
 
         <div>
-            Fullname:<input type=:"text" name="uname" placeholder="enter Full name" required/>
+            Full Name:<input type=:"text" name="uname" placeholder="Enter Full name" required/>
             <span id="nameerror"></span>
             <span>&nbsp;</span>
-            Dateofbirth:<input type=:"text" name="udob" placeholder="enter dob" required/>
-            <span id="nameerror"></span>
+            Date of Birth:<input type=:"text" name="udob" placeholder="Enter dob" />
+            <span id="doberror"></span>
             <span>&nbsp;</span>
-            Email:<input type=:"text" name="email" placeholder="enter email" required/>
-            <span id="nameerror"></span>
+            Email:<input type=:"text" name="email" placeholder="Enter email"/>
+            <span id="emailerror"></span>
             <span>&nbsp;</span>
             </div><br>
         <div>
-            Mobilenumber:<input type=:"text" name="uname" placeholder="enter  Mobilenumber" required/>
-            <span id="nameerror"></span>
+            Mobile Number:<input type=:"text" name="mobile" placeholder="Enter  Mobilenumber" required/>
+            <span id="mobileerror"></span>
             <span>&nbsp;</span>
-            gender:<input type=:"text" name="udob" placeholder="enter gender" required/>
-            <span id="nameerror"></span>
+            Gender:<select name="gender">
+            <option value="none" selected>Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            </select>
+
+            <span id="gendererror"></span>
             <span>&nbsp;</span>
-            occupation:<input type=:"text" name="email" placeholder="enter occupation" required/>
-            <span id="nameerror"></span>
-            <span>&nbsp;</span>
-            </div><br>
+            Occupation:<input type=:"text" name="occupation" placeholder="Enter occupation" />
+            <span id="occupationerror"></span>
+            </div>
+            <h3>Personal details</h3>
+            <div>
+                ID Type:<input type=:"text" name="idtype" placeholder="Enter ID Type" />
+                <span id="iderror"></span>
+                <span>&nbsp;</span>
+                ID Number:<input type=:"text" name="idnum" placeholder="Enter ID Number" />
+                <span id="numerror"></span>
+                <span>&nbsp;</span>
+                Issue Authority:<input type=:"text" name="auth" placeholder="Enter Issue Authority" />
+                <span id="autherror"></span>
+                <span>&nbsp;</span>
+                </div><br>
+                <div>
+                    Issue Date:<input type=:"text" name="issuedate" placeholder="Enter Issue Date" required/>
+                    <span id="issueerror"></span>
+                    <span>&nbsp;</span>
+                    Issue State:<input type=:"text" name="state" placeholder="Enter Issue State" required/>
+                    <span id="stateerror"></span>
+                    <span>&nbsp;</span>
+                     Expiry Date:<input type=:"text" name="expdate" placeholder="Enter Expiry Date" required/>
+                    <span id="expiryerror"></span>
+                    <span>&nbsp;</span>
+                    </div>
+                    <input type="button" onclick="validate(event)" value="Next"/>
+                    </form>
+         <script>
+             let validate=function(event){
+                 event.preventDefault();
+               let username = document.getElementsByName("uname")[0].value;
+               let dob = document.getElementsByName("udob")[0].value;
+               let email = document.getElementsByName("email")[0].value;
+               let mobile = document.getElementsByName("mobile")[0].value;
+               let gender = document.getElementsByName("gender")[0].value;
+               let occupation = document.getElementsByName("occupation")[0].value;
+               let idtype = document.getElementsByName("idtype")[0].value;
+               let idnumber = document.getElementsByName("idnum")[0].value;
+               let issueauthority = document.getElementsByName("auth")[0].value;
+               let issuedate= document.getElementsByName("issuedate")[0].value;
+               let issuestate = document.getElementsByName("state")[0].value;
+               let expirydate = document.getElementsByName("expdate")[0].value;
+              
+               var emailexp=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+               var mobileexp= new RegExp("^([0-9]){10}$");
+               var nameexp=new RegExp("^([a-zA-Z]{1,50})$");
+               var idtypeexp=new RegExp("^([a-zA-Z]{1,10})$");
+               var issueStateexp=new RegExp("^([a-zA-Z]{3,50})$");
+               let idnumexp=new RegExp("^([a-zA-Z0-9]{4})$");
+  
+               sessionStorage.setItem("username", username);
+               localStorage.setItem("name", username);
+             localStorage.setItem("dob",dob);
+           localStorage.setItem("email",email);
+            localStorage.setItem("mobile",mobile);
+            localStorage.setItem("gender",gender);
+             localStorage.setItem("occupation",occupation); 
+            localStorage.setItem("idtype", idtype);
+            localStorage.setItem("idnumber ", idnumber); 
+             localStorage.setItem("issueauthority", issueauthority);
+             localStorage.setItem("issuedate", issuedate);
+             localStorage.setItem("issuestate",issuestate);
+            localStorage.setItem("expirydate",expirydate);
+
+            console.log("Username:"+username);
+            console.log("Date of Birth:"+dob);
+            console.log("Email:"+email);
+            console.log("Mobile Number:" +mobile);
+            console.log("Gender:"+gender);
+            console.log("Occupation:"+Occupation);
+            console.log("ID Type:"+idtype);
+            console.log("ID Number:"+idnumber);
+            console.log("Issue Authority:"+issueauthority)
+            console.log("Issue Date:" +issuedate)
+            console.log("Issue State:"+issuestate)
+            console.log("Expiry Date:"+expirydate)
+     
+            if(username !='undefined' && username!="" && username!=null &&
+            email!='undefined' && email!=""&& email!=null && mobile!='undefined'
+            && mobile!="" && mobile!=null && idtype != 'undifined' && idtype!="" && idtype!=null){
+                window.locationn.href="loginpage.html"
+            }
+        
+            
+        }
+             
+         </script>
+
+        </html>

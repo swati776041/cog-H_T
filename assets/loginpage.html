@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        #details{
+            background-color: purple;
+        }
+        #welcome{
+            background-color:green ;
+            text-align: center;
+        }
+        </style> 
+</head>
+<body onload="readData()">
+     <h1 id="welcome">welcome <span id="user"></span></h1>
+    <h2>Registration</h2>
+    <div id="details">
+    <h2>Personal details</h2>
+<div>
+            <h3>FullName: <span id="Fullname"></span>  </h3>
+            <h3>Dateofbirth: <span id="Dateofbirth"></span>  </h3>
+            <h3>Email: <span id="Fullname"></Email>  </h3>
+    
+            <h3>Mobilenumber: <span id="Mobilenumber"></span>  </h3>
+            <h3>gender: <span id="gender"></span>  </h3>
+            <h3>occupation: <span id="occupation"></span>  </h3>
+<hr>
+<h2>Identity details</h2>
+
+            <h3>IDtype: <span id="IDtype"></span>  </h3>
+            <h3>IDnumber: <span id="IDnumber"></span>  </h3>
+            <h3>issueauthority: <span id="issueauthority"></Email>  </h3>
+            <h3>issuedate: <span id="issuedate"></span>  </h3>
+            <h3>issuestate: <span id="issuestate"></span>  </h3>
+            <h3>expirydate: <span id="expirydate"></span>  </h3>
+             
+         </div>
+        <input type="submit" value="next"/>
+    </form>
+
+    <script>
+        let readData = function(event)
+        {
+            localStorage.setItem("name", Fullname);
+             localStorage.setItem("Dateofbirth",Dateofbirth);
+           localStorage.setItem("Email",Email);
+            localStorage.setItem("Mobilenumber",Mobilenumber);
+            localStorage.setItem("gender",gender);
+             localStorage.setItem("occupation",occupation); 
+            localStorage.setItem("IDtype", IDtype);
+            localStorage.setItem("IDnumber ", IDnumber); 
+             localStorage.setItem("issueauthority", issueauthority);
+             localStorage.setItem("issuedate", issuedate);
+             localStorage.setItem("issuestate",issuestate);
+            localStorage.setItem("expirydate",expirydate);
+            
+            let Fullname = localStorage.getItem("Fullname");
+            let Dateofbirth = localStorage.getItem("Dateofbirth");
+            let Email = localStorage.getItem("Email");
+            let Mobilenumber = localStorage.getItem("Mobilenumber");
+            let gender = localStorage.getItem("gender");
+            let occupation = localStorage.getItem("occupation"); 
+            let IDtype= localStorage.getItem("IDtype");
+            let IDnumber = localStorage.getItem("IDnumber "); 
+            let issueauthority = localStorage.getItem("issueauthority");
+            let issuedate = localStorage.getItem("issuedate");
+            let issuestate = localStorage.getItem("issuestate");
+            let expirydate = localStorage.getItem("expirydate");
+            
+            console.log(Fullname)
+            console.log(Dateofbirth)
+            console.log(Email)
+            console.log(Mobilenumber)
+            console.log(gender)
+            console.log(occupation)
+            console.log(IDtype)
+            console.log(IDnumber)
+            console.log(issueauthority)
+            console.log(issuedate)
+            console.log(issuestate)
+            console.log(expirydate)
+
+            document.getElementById("Fullname").innerText=name;
+            document.getElementById("Dateofbirth").innerText=Dateofbirth;
+            document.getElementById("Email").innerText=Email;
+            document.getElementById("Mobilenumber").innerText=Mobilenumber;
+            document.getElementById("gender").innerText=gender;
+            document.getElementById("occupation").innerText=occupation;
+            document.getElementById("IDtype").innerText=IDtype;
+            document.getElementById("IDnumber").innerText=IDnumber;
+            document.getElementById("issueauthority").innerText=issueauthority;
+            document.getElementById("issuedate").innerText=issuedate;
+            document.getElementById("issuestate").innerText=issuestate;
+            document.getElementById("expirydate").innerText=expirydate;
+
+            
+        }
+                
+    </script>
+</body>
+</html>

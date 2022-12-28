@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border:4px solid green;
+            border-radius: 3px 10px;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px;
+            background-color: darkseagreen;
+        }
+        button:hover{
+            border-color: rgb(7, 58, 7);
+            background-color: red;
+            color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <body>
+        <audio id="player" controls autoplay>  
+           
+            <source src="./assets/freemp3.plus-Kantara - Varaha Roopam(Lyric Video)_ Sai Vignesh _ Rishab Shetty _ Ajaneesh Loknath _ Hombale Films-64.mp3" type=audio/mpeg>
+        </audio>
+        <audio id="player" controls autoplay>    
+            <source src="./assets/Shree_Hanuman_Chalisa.mp3" type=audio/mpeg>
+        </audio>
+        <audio id="player" controls autoplay>  
+            <source src="./assets/freemp3.plus-THE BEGINNING OF KANTARA😍 _ Kantara (Hindi) _ Netflix India-64.mp3" type=audio/mpeg>
+        </audio> 
+        
+        <button id="play">play</button>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+    <button id="volup">VolUp</button>
+    <button onclick="volDecrease()" id="voldown">VolDown</button>
+
+    <script>
+        let player = document.getElementById("player");
+        document.getElementById("play").addEventListener("click", ()=>{
+            player.play();
+        });
+        document.getElementById("pause").addEventListener("click", ()=>{
+            player.pause();
+        });
+        document.getElementById("stop").addEventListener("click", ()=>{
+            player.pause();
+            player.currentTime = 0;
+        });
+        document.getElementById("volup").addEventListener("click", ()=>{
+            player.volume += 0.1;
+            showVol();
+        });
+        let volDecrease = ()=>{
+            player.volume -= 0.1;
+            showVol();
+        };
+        let showVol = ()=>{
+            console.log(player.volume);
+        };
+    </script>
+</body>
+</html>

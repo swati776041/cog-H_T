@@ -1,0 +1,26 @@
+###
+POST http://localhost:8003/authenticate
+content-type: application/json
+
+{
+    "username": "user1",
+    "password": "demo@123"
+}
+###
+
+POST http://localhost:8003/authenticate
+content-type: application/json
+
+{
+    "username": "user2",
+    "password": "demo@123"
+}
+###
+
+POST http://localhost:8003/authenticate
+content-type: application/json
+
+{
+    "username": "user3",
+    "password": "demo@123"
+}
